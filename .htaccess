@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^$ index.php?page=goods [L]
+RewriteRule ^cart/$ index.php?page=cart [L]
+RewriteRule ^404/$ index.php?page=404 [L]
+
+RewriteCond %{REQUEST_FILENAME} -F
+RewriteCond %{REQUEST_FILENAME} !index\.php$
+RewriteRule !\.(jpg|png|css)$ index.php?page=405 [L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ index.php?page=406 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-F
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php?page=407
+
+
+
+
+
+
