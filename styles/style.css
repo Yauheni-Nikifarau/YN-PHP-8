@@ -185,9 +185,9 @@
     grid-area: sum;
 }
 
-.cart-update {
+.cart-update, .cart-position-delete {
     margin: 20px;
-    width: 150px;
+    width: 130px;
     height: 50px;
     font-weight: bold;
     text-transform: uppercase;
@@ -195,6 +195,10 @@
     color: #1a1008;
     border: none;
     text-align: center;
+}
+
+.cart-position-delete {
+    margin: 0;
 }
 
 .page404 {
@@ -281,7 +285,7 @@
         width: 130px;
         margin: 20px auto;
         grid-template-columns: 130px;
-        grid-template-rows: 130px 60px 60px 60px;
+        grid-template-rows: 130px 60px 60px 40px;
         gap: 10px;
         grid-template-areas:
     "image"
