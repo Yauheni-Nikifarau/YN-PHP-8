@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .site {
     width: 80%;
     max-width: 1080px;
@@ -72,6 +76,33 @@
     font-size: 15px;
     text-align: center;
     line-height: 25px;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 40vw;
+    height: 40vw;
+    min-width: 200px;
+    min-height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 30px auto;
+}
+
+.product-description {
+    font-size: 18px;
+}
+
+.product-price {
+    margin: 30px 0;
+    text-align: right;
+    font-size: 36px;
+    font-weight: bold;
 }
 
 .header-cart-price {
@@ -200,6 +231,45 @@
 .cart-position-delete {
     margin: 0;
 }
+
+.applyOrder {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 150px 1fr;
+    grid-template-rows: 30px 30px 60px 40px;
+    gap: 20px 0px;
+    grid-template-areas:
+    "name name name"
+    "phone phone phone"
+    "address address address"
+    ". button .";
+}
+.applyOrder-name {
+    font-size: 16px;
+    padding-left: 10px;
+    grid-area: name;
+}
+.applyOrder-phone {
+    font-size: 16px;
+    padding-left: 10px;
+    grid-area: phone;
+}
+
+.applyOrder-address {
+    font-size: 16px;
+    padding: 10px;
+    grid-area: address;
+    resize: none;
+}
+
+.applyOrder-button {
+    grid-area: button;
+    font-size: 26px;
+    border: none;
+    font-weight: bold;
+    background-color: #857347;
+}
+
 
 .page404 {
     font-size: 72px;

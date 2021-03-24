@@ -4,18 +4,19 @@ RewriteBase /
 RewriteRule ^$ index.php?page=goods [L]
 RewriteRule ^cart/$ index.php?page=cart [L]
 RewriteRule ^404/$ index.php?page=404 [L]
+RewriteRule ^product/(\d+)$ index.php?page=product&id=$1 [L]
 
 RewriteCond %{REQUEST_FILENAME} -F
 RewriteCond %{REQUEST_FILENAME} !index\.php$
-RewriteRule !\.(jpg|png|css)$ index.php?page=405 [L]
+RewriteRule !\.(jpg|png|css)$ index.php?page=404 [L]
 
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ index.php?page=406 [L]
+RewriteRule ^.*$ index.php?page=404 [L]
 
 RewriteCond %{REQUEST_FILENAME} !-F
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^.*$ index.php?page=407
+RewriteRule ^.*$ index.php?page=404
 
 
 

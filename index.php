@@ -46,11 +46,17 @@ if ($_GET['page'] == 'goods') {
         $arrOrder = [];
     }
 
+    if (isset($_POST['cart-order']) && $_POST['cart-order'] == 'yes') {
+        require_once ROOT . '/app/controller/applyorder.php';
+    }
+
     if (count($_POST) > 0) {
         foreach ($arrOrder as $id => $quantity) {
             $arrOrder[$id] = $_POST[$id];
         }
     }
+
+
 
     $arrOrder = array_filter($arrOrder, function ($value) {
         return $value > 0;
@@ -72,6 +78,17 @@ if ($_GET['page'] == 'goods') {
             ];
         }
     }
+} elseif ($_GET['page'] == 'product') {
+
+    $pageTitle = 'Product';
+    $templateFile = ROOT . '/app/templates/product.php';
+
+    if (!isset($_GET['id']) || !isset($goodsData[$_GET['id']])) {
+        header('location: /?page=404');
+    }
+
+    $productData = $goodsData[$_GET['id']];
+
 } else {
     $pageTitle = '404';
     $templateFile = ROOT . '/app/templates/404.php';

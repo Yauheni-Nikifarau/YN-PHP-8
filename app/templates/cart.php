@@ -9,4 +9,10 @@
     </div>
     <?php endforeach; ?>
     <button class="cart-update">update cart</button>
+    <div class="applyOrder">
+        <input type="text" name="name" placeholder="Name" class="applyOrder-name">
+        <input type="text" name="phone" placeholder="Phone" class="applyOrder-phone">
+        <textarea name="address" cols="30" rows="10" placeholder="Address" class="applyOrder-address"></textarea>
+        <button name="cart-order" value="yes" class="applyOrder-button">Buy!</button>
+    </div>
 </form>
