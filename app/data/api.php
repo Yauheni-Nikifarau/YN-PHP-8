@@ -1,7 +1,7 @@
 <?php
 $curlQuery = curl_init();
 $curlOptions = [
-    CURLOPT_URL => 'https://fakestoreapi.herokuapp.com/products/category/electronics',
+    CURLOPT_URL => 'https://fakestoreapi.com/products/category/electronics',
     CURLOPT_RETURNTRANSFER => 1
 ];
 curl_setopt_array($curlQuery, $curlOptions);
@@ -10,7 +10,6 @@ curl_close($curlQuery);
 $curlResult = json_decode($curlResult);
 $changedArray = [];
 foreach ($curlResult as $good) {
-    $good->image = str_replace('fakestoreapi.com', 'fakestoreapi.herokuapp.com', $good->image);
     $obj = ['image'=>$good->image, 'title'=>$good->title, 'description'=>$good->description, 'price'=>$good->price];
     $changedArray[$good->id] = (object) $obj;
 }
